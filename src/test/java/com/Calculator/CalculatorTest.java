@@ -27,67 +27,73 @@ public class CalculatorTest {
 
 	@Test
 	public void AdditionTest() throws Exception {
-		final long result = cal.add(2, 3);
-		assertThat(result, is(5L));
+		int result = cal.add("2", "3");
+		assertThat(result, is(5));
 	}
 
 	@Test
 	public void AdditionWithZero() throws Exception {
-		final long result = cal.add(2, 0);
-		assertThat(result, is(2L));
+		int result = cal.add("2", "0");
+		assertThat(result, is(2));
 	}
 
 	@Test
 	public void AdditionWithNegitives() throws Exception {
-		final long result = cal.add(2, -2);
-		assertThat(result, is(0L));
+		int result = cal.add("2", "-2");
+		assertThat(result, is(0));
 	}
 
 	@Test
 	public void SubtractTest() throws Exception {
-		final long result = cal.subtract(3, 2);
-		assertThat(result, is(1L));
+		int result = cal.sub("3","2");
+		assertThat(result, is(1));
 	}
 
 	@Test
 	public void SubtractWithSameDigit() throws Exception {
-		final long result = cal.subtract(3, 3);
-		assertThat(result, is(0L));
+		int result = cal.sub("3", "3");
+		assertThat(result, is(0));
 	}
 
 	@Test
 	public void SubractWithNegatives() throws Exception {
-		final long result = cal.subtract(3, -3);
-		assertThat(result, is(6L));
+		int result = cal.sub("3", "-3");
+		assertThat(result, is(6));
 	}
 
 	@Test
 	public void MultiplicationTest() throws Exception {
-		final long result = cal.multiply(3, 3);
-		assertThat(result, is(9L));
+		int result = cal.multiply("3","3");
+		assertThat(result, is(9));
 	}
 
 	@Test
 	public void MultiplicationTestWithZero() throws Exception {
-		final long result = cal.multiply(3, 0);
-		assertThat(result, is(0L));
+		int result = cal.multiply("3", "0");
+		assertThat(result, is(0));
 	}
 
 	@Test
 	public void MultiplicationWithNegatives() throws Exception {
-		final long result = cal.multiply(3, -3);
-		assertThat(result, is(-9L));
+		int result = cal.multiply("3","-3");
+		assertThat(result, is(-9));
 	}
 
 	@Test
 	public void DivitionTest() throws Exception {
-		final long result = cal.divide(4, 4);
-		assertThat(result, is(1L));
+		int result = cal.divide("4","4");
+		assertThat(result, is(1));
 	}
 
 	@Test
 	public void DivitionWithNegatives() throws Exception {
-		final long result = cal.divide(4, -4);
-		assertThat(result, is(-1L));
+		int result = cal.divide("4", "-4");
+		assertThat(result, is(-1));
+	}
+	
+	@Test
+	public void DivitionWithZero() throws Exception {
+		int result = cal.divide("4", "0");
+		assertThat(result, is(0));
 	}
 }
